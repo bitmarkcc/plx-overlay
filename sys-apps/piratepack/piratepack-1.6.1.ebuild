@@ -13,6 +13,6 @@ SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
 
 src_install() {
-dodir /opt/piratepack
-emake DESTDIR="${D}" install || die "Install failed"
+	      dodir /opt/piratepack
+	      emake DESTDIR="${D}" install
 }
