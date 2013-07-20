@@ -12,6 +12,10 @@ LICENSE="CC0"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
 
+src_compile() {
+	      emake
+} 
+
 src_install() {
 	      dodir /opt/piratepack
 	      emake DESTDIR="${D}" install
