@@ -6,7 +6,7 @@ EAPI=4
 
 DESCRIPTION="Enhance your digital freedom"
 HOMEPAGE="https://piratelinux.org"
-SRC_URI="https://akrmn.org/jj0OOcc7NQVEQj9pblNIU12r4/dist/${P}.tar.gz"
+SRC_URI="https://testing.piratelinux.org/repo/dist/${P}.tar.gz"
 
 LICENSE="CC0"
 SLOT="0"
@@ -19,4 +19,5 @@ src_compile() {
 src_install() {
 	      dodir /opt/piratepack
 	      emake DESTDIR="${D}" install
+	      dosym /opt/piratepack/piratepack /usr/bin/piratepack
 }
