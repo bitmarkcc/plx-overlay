@@ -36,6 +36,7 @@ src_compile() {
 }
 
 src_install() {
+	dodir /usr/bin
 	install -o root -g root -m 755 src/cwallet "${D}"/usr/bin/cwallet
 	if use gtk
 	then
