@@ -12,20 +12,22 @@ KEYWORDS="-* ~amd64 ~x86"
 IUSE="gtk"
 
 DEPEND="gtk? ( x11-libs/gtk+:2 )
-	     >=app-arch/zip-2
-	     >=app-arch/unzip-5
-	     >=sys-libs/zlib-1
-	     >=dev-util/cmake-2"
+>=app-arch/zip-2
+>=app-arch/unzip-5
+>=sys-libs/zlib-1
+>=dev-util/cmake-2"
+
 RDEPEND=">=www-client/firefox-3
-	>=media-video/ffmpeg-1
-	>=media-gfx/imagemagick-6"
+>=media-video/ffmpeg-1
+>=media-gfx/imagemagick-6
+>=app-misc/cwallet-1"
 
 src_compile() {
-	      emake
-} 
+	emake
+}
 
 src_install() {
-	      dodir /opt/piratepack
-	      emake DESTDIR="${D}" install
-	      dosym /opt/piratepack/piratepack /usr/bin/piratepack
+	dodir /opt/piratepack
+	emake DESTDIR="${D}" install
+	dosym /opt/piratepack/piratepack /usr/bin/piratepack
 }
