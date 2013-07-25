@@ -36,7 +36,7 @@ src_compile() {
 }
 
 src_install() {
-	install -o root -g root -m 755 src/cwallet $(DESTDIR)/usr/bin/cwallet
+	install -o root -g root -m 755 src/cwallet "${D}"/usr/bin/cwallet
 	if use gtk
 	then
 		emake DESTDIR="${D}" install
