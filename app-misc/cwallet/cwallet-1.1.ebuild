@@ -37,14 +37,14 @@ src_compile() {
 }
 
 src_install() {
-	dodir /opt/piratepack/share/bitcoin_build
-	install -m 755 src/cwallet "${D}"/opt/piratepack/share/bitcoin_build/cwallet
-	install -m 644 src/logo.png "${D}"/opt/piratepack/share/bitcoin_build/logo.png
-	install -m 644 src/icon.png "${D}"/opt/piratepack/share/bitcoin_build/icon.png
-	dosym /opt/piratepack/share/bitcoin_build/cwallet /usr/bin/cwallet
+	dodir /opt/piratepack/share/bitcoin_build/cwallet
+	install -m 755 src/cwallet "${D}"/opt/piratepack/share/bitcoin_build/cwallet/cwallet
+	install -m 644 src/logo.png "${D}"/opt/piratepack/share/bitcoin_build/cwallet/logo.png
+	install -m 644 src/icon.png "${D}"/opt/piratepack/share/bitcoin_build/cwallet/icon.png
+	dosym /opt/piratepack/share/bitcoin_build/cwallet/cwallet /usr/bin/cwallet
 	if use gtk
 	then
-		install -m 755 src/cwallet-gui "${D}"/opt/piratepack/share/bitcoin_build/cwallet-gui
-		dosym /opt/piratepack/share/bitcoin_build/cwallet-gui /usr/bin/cwallet-gui
+		install -m 755 src/cwallet-gui "${D}"/opt/piratepack/share/bitcoin_build/cwallet/cwallet-gui
+		dosym /opt/piratepack/share/bitcoin_build/cwallet/cwallet-gui /usr/bin/cwallet-gui
 	fi
 }
