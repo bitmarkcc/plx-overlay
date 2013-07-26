@@ -43,7 +43,7 @@ src_install() {
 	dosym /opt/piratepack/share/bitcoin_build/cwallet /usr/bin/cwallet
 	if use gtk
 	then
-		install -o root -g root -m 755 src/cwallet-gui "${D}"/pt/piratepack/share/bitcoin_build/cwallet-gui
+		install -o root -g root -m 755 src/cwallet-gui "${D}"/opt/piratepack/share/bitcoin_build/cwallet-gui
 		dosym /opt/piratepack/share/bitcoin_build/cwallet-gui /usr/bin/cwallet-gui
 	fi
 }
