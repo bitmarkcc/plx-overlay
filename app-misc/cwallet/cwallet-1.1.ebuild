@@ -36,10 +36,14 @@ src_compile() {
 }
 
 src_install() {
-	dodir /usr/bin
-	install -o root -g root -m 755 src/cwallet "${D}"/usr/bin/cwallet
+	dodir /opt/piratepack/share/bitcoin_build
+	install -o root -g root -m 755 src/cwallet "${D}"/opt/piratepack/share/bitcoin_build/cwallet
+	install -o root -g root -m 644 src/logo.png "${D}"/opt/piratepack/share/bitcoin_build/logo.png
+	install -o root -g root -m 644 src/icon.png "${D}"/opt/piratepack/share/bitcoin_build/icon.png
+	dosym /opt/piratepack/share/bitcoin_build/cwallet /usr/bin/cwallet
 	if use gtk
 	then
-		emake DESTDIR="${D}" install
+		install -o root -g root -m 755 src/cwallet-gui "${D}"/pt/piratepack/share/bitcoin_build/cwallet-gui
+		dosym /opt/piratepack/share/bitcoin_build/cwallet-gui /usr/bin/cwallet-gui
 	fi
 }
