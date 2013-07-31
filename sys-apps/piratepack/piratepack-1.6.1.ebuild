@@ -23,5 +23,5 @@ RDEPEND=">=www-client/firefox-3
 >=app-misc/cwallet-1"
 
 src_install() {
-	./install_piratepack "${D}"/opt/piratepack
+	./install_piratepack.sh "${D}"/opt/piratepack
 }
