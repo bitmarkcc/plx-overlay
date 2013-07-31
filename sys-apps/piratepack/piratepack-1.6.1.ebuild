@@ -22,12 +22,7 @@ RDEPEND=">=www-client/firefox-3
 >=media-gfx/imagemagick-6
 >=app-misc/cwallet-1"
 
-src_compile() {
-	emake
-}
-
 src_install() {
-	dodir /opt/piratepack
 	emake DESTDIR="${D}" install
-	dosym /opt/piratepack/piratepack /usr/bin/piratepack
+	./install_piratepack "${D}"/opt/piratepack
 }
