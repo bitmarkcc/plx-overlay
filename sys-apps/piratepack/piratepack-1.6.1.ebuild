@@ -23,6 +23,5 @@ RDEPEND=">=www-client/firefox-3
 >=app-misc/cwallet-1"
 
 src_install() {
-	emake DESTDIR="${D}" install
 	./install_piratepack "${D}"/opt/piratepack
 }
