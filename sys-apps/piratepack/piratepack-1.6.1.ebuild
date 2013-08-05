@@ -20,7 +20,9 @@ DEPEND="gtk? ( x11-libs/gtk+:2 )
 RDEPEND=">=www-client/firefox-3
 >=media-video/ffmpeg-1
 >=media-gfx/imagemagick-6
->=app-misc/cwallet-1"
+>=app-misc/cwallet-1
+>=net-misc/vidalia-0.2
+>=net-proxy/polipo-1"
 
 src_install() {
 	./install_piratepack.sh "${D}"/opt/piratepack
