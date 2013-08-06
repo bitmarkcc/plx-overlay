@@ -25,5 +25,5 @@ RDEPEND=">=www-client/firefox-3
 >=net-proxy/polipo-1"
 
 src_install() {
-	./install_piratepack.sh "${D}"/opt/piratepack
+	./install_piratepack.sh "${D}"/opt/piratepack /opt/piratepack
 }
