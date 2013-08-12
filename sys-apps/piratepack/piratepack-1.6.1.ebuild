@@ -22,10 +22,14 @@ RDEPEND=">=www-client/firefox-3
 >=media-gfx/imagemagick-6
 >=app-misc/cwallet-1
 >=net-misc/vidalia-0.2
->=net-proxy/polipo-1"
+>=net-proxy/polipo-1
+>=net-p2p/bitcoind-0.8.1
+>=virtual/jdk-1.5"
 
 src_install() {
 	./install_piratepack.sh "${D}"/opt/piratepack /opt/piratepack
 	dosym /opt/piratepack/bin/piratepack /usr/bin/piratepack
 	dosym /opt/piratepack/bin/piratepack-refresh /usr/bin/piratepack-refresh
+	dodir /etc/profile.d
+	install -m 644 profile.sh "${D}"/etc/profile.d/piratepack.sh
 }
