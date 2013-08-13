@@ -17,7 +17,8 @@ DEPEND="x11-libs/gtk+:2
 >=dev-util/cmake-2
 >=virtual/jdk-1.5
 >=dev-java/commons-logging-1.1
->=dev-java/ant-core-1.7"
+>=dev-java/ant-core-1.7
+www-servers/tomcat:6"
 
 RDEPEND=">=www-client/firefox-3
 >=media-video/ffmpeg-1
@@ -27,7 +28,8 @@ RDEPEND=">=www-client/firefox-3
 >=net-proxy/polipo-1
 >=net-p2p/bitcoind-0.8.1
 >=virtual/jdk-1.5
->=dev-java/commons-logging-1.1"
+>=dev-java/commons-logging-1.1
+www-servers/tomcat:6"
 
 src_install() {
 	export PIRATEPACK_GENTOO="1"
