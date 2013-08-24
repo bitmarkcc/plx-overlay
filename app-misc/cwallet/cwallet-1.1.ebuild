@@ -37,14 +37,15 @@ src_compile() {
 }
 
 src_install() {
-	dodir /opt/piratepack/packages/cwallet
-	install -m 755 src/cwallet "${D}"/opt/piratepack/packages/cwallet/cwallet
-	install -m 644 src/logo.png "${D}"/opt/piratepack/packages/cwallet/logo.png
-	install -m 644 src/icon.png "${D}"/opt/piratepack/packages/cwallet/icon.png
-	dosym /opt/piratepack/packages/cwallet/cwallet /usr/bin/cwallet
+	dodir /opt/piratepack/packages/cwallet/bin
+	dodir /opt/piratepack/packages/cwallet/share/cwallet_build
+	install -m 755 src/cwallet "${D}"/opt/piratepack/packages/cwallet/share/cwallet_build/cwallet
+	install -m 644 src/logo.png "${D}"/opt/piratepack/packages/cwallet/share/cwallet_build/logo.png
+	install -m 644 src/icon.png "${D}"/opt/piratepack/packages/cwallet/share/cwallet_build/icon.png
+	dosym /opt/piratepack/packages/cwallet/share/cwallet_build/cwallet /opt/piratepack/packages/cwallet/bin/cwallet
 	if use gtk
 	then
-		install -m 755 src/cwallet-gui "${D}"/opt/piratepack/packages/cwallet/cwallet-gui
-		dosym /opt/piratepack/packages/cwallet/cwallet-gui /usr/bin/cwallet-gui
+		install -m 755 src/cwallet-gui "${D}"/opt/piratepack/packages/cwallet/share/cwallet_build/cwallet-gui
+		dosym /opt/piratepack/packages/cwallet/share/cwallet_build/cwallet-gui /opt/piratepack/packages/cwallet/bin/cwallet-gui
 	fi
 }
