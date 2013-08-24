@@ -29,6 +29,10 @@ src_install() {
 	dodir /opt/piratepack/packages/i2p/share
 	cp -r share/i2p-browser "${D}"/opt/piratepack/packages/i2p/share/
 
+	cd gentoo
+	./configure.sh
+	cd ..
+
 	cd setup/i2p-browser
 	./install_i2p-browser.sh "${D}"/opt/piratepack/packages/i2p /opt/piratepack/packages/i2p
 

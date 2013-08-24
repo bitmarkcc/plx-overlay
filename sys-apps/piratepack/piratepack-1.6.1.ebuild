@@ -30,7 +30,6 @@ RDEPEND=">=www-client/firefox-3
 "
 
 src_install() {
-	export PIRATEPACK_GENTOO="1"
 	./install_piratepack.sh "${D}"/opt/piratepack /opt/piratepack
 	dosym /opt/piratepack/bin/piratepack /usr/bin/piratepack
 	dosym /opt/piratepack/bin/piratepack-refresh /usr/bin/piratepack-refresh
