@@ -5,7 +5,7 @@
 EAPI=5
 DESCRIPTION="See your (crypto) wallet"
 HOMEPAGE="https://github.com/piratelinux/cwallet"
-SRC_URI="https://testing.piratelinux.org/repo/dist/${P}.tar.gz"
+SRC_URI="https://piratelinux.org/repo/dist/${P}.tar.gz"
 LICENSE="CC0-1.0"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"

@@ -9,6 +9,7 @@ SRC_URI="https://testing.piratelinux.org/repo/dist/${P}.tar.gz"
 LICENSE="CC0-1.0"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
+IUSE="+networkmanager"
 
 DEPEND="x11-libs/gtk+:2
 >=app-arch/zip-2
@@ -27,6 +28,7 @@ RDEPEND=">=www-client/firefox-3
 >=net-misc/vidalia-0.2
 >=net-proxy/polipo-1
 >=net-p2p/bitcoind-0.8.1
+networkmanager? ( >=net-misc/networkmanager-openvpn-0.9 )
 "
 
 src_install() {
