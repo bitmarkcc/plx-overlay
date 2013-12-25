@@ -32,7 +32,7 @@ networkmanager? ( >=net-misc/networkmanager-openvpn-0.9 )
 "
 
 src_install() {
-	./install_piratepack.sh "${D}"/opt/piratepack /opt/piratepack
+	./install_piratepack.sh /opt/piratepack "${D}"
 	dosym /opt/piratepack/bin/piratepack /usr/bin/piratepack
 	dosym /opt/piratepack/bin/piratepack-refresh /usr/bin/piratepack-refresh
 	dodir /etc/profile.d
