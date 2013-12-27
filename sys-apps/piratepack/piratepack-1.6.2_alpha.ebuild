@@ -32,6 +32,15 @@ networkmanager? ( >=net-misc/networkmanager-openvpn-0.9 )
 "
 
 src_install() {
+	dodir /usr/share/applications
+	dodir /etc/xdg/autostart
+	dodir /usr/share/pixmaps
+	dodir /usr/share/icons/hicolor/16x16/apps
+	dodir /usr/share/icons/hicolor/22x22/apps
+	dodir /usr/share/icons/hicolor/32x32/apps
+	dodir /usr/share/icons/hicolor/48x48/apps
+	dodir /usr/share/icons/hicolor/64x64/apps
+	dodir /usr/share/icons/hicolor/128x128/apps
 	./install_piratepack.sh /opt/piratepack "${D}"
 	dosym /opt/piratepack/bin/piratepack /usr/bin/piratepack
 	dosym /opt/piratepack/bin/piratepack-refresh /usr/bin/piratepack-refresh
