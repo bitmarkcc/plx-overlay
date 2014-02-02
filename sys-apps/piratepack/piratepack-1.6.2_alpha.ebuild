@@ -5,7 +5,7 @@
 EAPI=5
 DESCRIPTION="Enhance your digital freedom"
 HOMEPAGE="https://piratelinux.org"
-SRC_URI="https://testing.piratelinux.org/repo/dist/${P}.tar.gz"
+SRC_URI="https://piratelinux.org/repo/dist/${P}.tar.gz"
 LICENSE="CC0-1.0"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
