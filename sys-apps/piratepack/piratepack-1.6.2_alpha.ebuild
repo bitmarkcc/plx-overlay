@@ -30,7 +30,7 @@ RDEPEND=">=www-client/firefox-3
 >=net-misc/vidalia-0.2
 >=net-proxy/polipo-1
 >=net-p2p/bitcoind-0.8.1
->=net-im/pidgin-2[gstreamer]
+>=net-im/pidgin-2[-gstreamer]
 >=x11-plugins/pidgin-otr-3
 networkmanager? ( >=net-misc/networkmanager-openvpn-0.9 )
 "
