@@ -18,6 +18,7 @@ DEPEND="x11-libs/gtk+:2
 >=dev-util/cmake-2
 >=app-misc/cwallet-1
 >=net-misc/piratepack-i2p-1
+>=x11-plugins/pidgin-otr-3
 "
 
 RDEPEND=">=www-client/firefox-3
@@ -28,6 +29,7 @@ RDEPEND=">=www-client/firefox-3
 >=net-misc/vidalia-0.2
 >=net-proxy/polipo-1
 >=net-p2p/bitcoind-0.8.1
+>=x11-plugins/pidgin-otr-3
 networkmanager? ( >=net-misc/networkmanager-openvpn-0.9 )
 "
 
