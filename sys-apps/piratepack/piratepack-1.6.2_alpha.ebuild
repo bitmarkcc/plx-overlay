@@ -9,7 +9,7 @@ SRC_URI="https://piratelinux.org/repo/dist/${P}.tar.gz"
 LICENSE="CC0-1.0"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
-IUSE="+networkmanager"
+IUSE="+networkmanager +piratepack_sensors +piratepack_amule +piratepack_keyboard"
 
 DEPEND="x11-libs/gtk+:2
 >=app-arch/zip-2
@@ -33,6 +33,9 @@ RDEPEND=">=www-client/firefox-3
 >=net-im/pidgin-2[-gstreamer]
 >=x11-plugins/pidgin-otr-3
 networkmanager? ( >=net-misc/networkmanager-openvpn-0.9 )
+piratepack_sensors? ( >=sys-apps/lm_sensors-3 )
+piratepack_amule? ( >=net-p2p/amule-2[upnp] )
+piratepack_keyboard? ( >=x11-misc/matchbox-keyboard-0.1 )
 "
 
 src_install() {
