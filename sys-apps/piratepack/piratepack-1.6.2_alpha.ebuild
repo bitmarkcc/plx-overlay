@@ -11,7 +11,7 @@ SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
 IUSE="+networkmanager +piratepack_sensors +piratepack_amule +piratepack_keyboard"
 
-DEPEND=">=dev-devel/make-3
+DEPEND=">=sys-devel/make-3
 virtual/pkgconfig
 >=sys-libs/zlib-1
 x11-libs/gtk+:2
