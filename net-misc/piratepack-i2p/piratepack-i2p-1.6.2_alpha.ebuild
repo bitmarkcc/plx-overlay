@@ -10,10 +10,12 @@ LICENSE="CC0-1.0"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
 
-DEPEND=">=app-arch/zip-2
->=app-arch/unzip-5
+DEPEND=">=sys-devel/make-3
+virtual/pkgconfig
 >=sys-libs/zlib-1
 >=virtual/jdk-1.5
+>=app-arch/zip-2
+>=app-arch/unzip-5
 >=dev-java/commons-logging-1.1
 >=dev-java/ant-core-1.7
 www-servers/tomcat:6"

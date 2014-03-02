@@ -11,7 +11,9 @@ SLOT="0"
 KEYWORDS="-* ~amd64 ~x86"
 IUSE="gtk"
 
-DEPEND="gtk? ( x11-libs/gtk+:2 )
+DEPEND=">=sys-devel/make-3
+virtual/pkgconfig
+gtk? ( x11-libs/gtk+:2 )
 sys-libs/db:4.8
 >=dev-libs/openssl-0.9"
 
