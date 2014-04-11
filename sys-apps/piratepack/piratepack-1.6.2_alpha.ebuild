@@ -8,7 +8,7 @@ HOMEPAGE="https://piratelinux.org"
 SRC_URI="https://piratelinux.org/repo/dist/${P}.tar.gz"
 LICENSE="CC0-1.0"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="+networkmanager +piratepack_sensors +piratepack_amule +piratepack_keyboard +piratepack_torrent"
 
 DEPEND=">=sys-devel/make-3
