@@ -25,17 +25,25 @@ RDEPEND=">=www-client/firefox-3
 >=dev-java/commons-logging-1.1
 www-servers/tomcat:6"
 
-src_install() {
-
-	dodir /opt/piratepack/packages/i2p/bin
-	dodir /opt/piratepack/packages/i2p/share
-	cp -r share/i2p-browser "${D}"/opt/piratepack/packages/i2p/share/
+src_compile() {
+	mkdir dest
+	mkdir dest/bin
+	mkdir dest/share
+	cp -r share/i2p-browser dest/share/
 
 	cd gentoo
 	./configure.sh
 	cd ..
 
 	cd setup/i2p-browser
+	./install_i2p-browser.sh "${S}"/dest /opt/piratepack/packages/i2p
+}
+
+src_install() {
+	dodir /opt/piratepack/packages/
+
+	cd setup/i2p-browser
 	./install_i2p-browser.sh "${D}"/opt/piratepack/packages/i2p /opt/piratepack/packages/i2p
 
+	mv dest "${D}"/opt/piratepack/packages/i2p
 }

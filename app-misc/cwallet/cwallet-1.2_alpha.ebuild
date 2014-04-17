@@ -18,7 +18,7 @@ sys-libs/db:4.8
 >=dev-libs/openssl-0.9"
 
 RDEPEND="${DEPEND}
->=media-gfx/imagemagick-6
+>=media-gfx/imagemagick-6[truetype]
 >=media-gfx/qrencode-3"
 
 src_configure() {
