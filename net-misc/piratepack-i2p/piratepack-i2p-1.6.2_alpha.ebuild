@@ -42,8 +42,5 @@ src_compile() {
 src_install() {
 	dodir /opt/piratepack/packages/
 
-	cd setup/i2p-browser
-	./install_i2p-browser.sh "${D}"/opt/piratepack/packages/i2p /opt/piratepack/packages/i2p
-
 	mv dest "${D}"/opt/piratepack/packages/i2p
 }
