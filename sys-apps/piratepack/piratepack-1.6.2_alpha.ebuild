@@ -40,6 +40,18 @@ piratepack_keyboard? ( >=x11-misc/matchbox-keyboard-0.1 )
 piratepack_torrent? ( >=net-p2p/transmission-2 )
 "
 
+src_configure() {
+	cd piratepack
+	econf
+	cd ..
+}
+
+src_compile() {
+	cd piratepack
+	emake
+	cd ..
+}
+
 src_install() {
 	dodir /usr/share/applications
 	dodir /etc/xdg/autostart
