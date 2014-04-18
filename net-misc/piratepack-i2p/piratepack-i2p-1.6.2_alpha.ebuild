@@ -43,4 +43,10 @@ src_install() {
 	dodir /opt/piratepack/packages/
 
 	mv dest "${D}"/opt/piratepack/packages/i2p
+
+	dosym /opt/piratepack/packages/i2p/share/i2p-browser_build/eepget /opt/piratepack/packages/i2p/bin/eepget
+	dosym /opt/piratepack/packages/i2p/share/i2p-browser_build/i2prouter /opt/piratepack/packages/i2p/bin/i2prouter
+	dosym /opt/piratepack/packages/i2p/share/i2p-browser_build/i2psvc /opt/piratepack/packages/i2p/bin/i2psvc
+	dosym /opt/piratepack/packages/i2p/share/i2p-browser_build/i2p-browser /opt/piratepack/packages/i2p/bin/i2p-browser
+	dosym /opt/piratepack/packages/i2p/share/i2p-browser_build/i2p-irc /opt/piratepack/packages/i2p/bin/i2p-irc
 }
