@@ -23,7 +23,8 @@ x11-libs/gtk+:2
 >=x11-plugins/pidgin-otr-3
 "
 
-RDEPEND=">=www-client/firefox-3
+RDEPEND=">=sys-libs/zlib-1
+>=www-client/firefox-3
 >=media-video/ffmpeg-1
 >=media-gfx/imagemagick-6
 >=app-misc/cwallet-1

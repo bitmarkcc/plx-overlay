@@ -13,11 +13,15 @@ IUSE="gtk"
 
 DEPEND=">=sys-devel/make-3
 virtual/pkgconfig
+>=sys-libs/zlib-1
 gtk? ( x11-libs/gtk+:2 )
 sys-libs/db:4.8
 >=dev-libs/openssl-0.9"
 
-RDEPEND="${DEPEND}
+RDEPEND=">=sys-libs/zlib-1
+gtk? ( x11-libs/gtk+:2 )
+sys-libs/db:4.8
+>=dev-libs/openssl-0.9
 >=media-gfx/imagemagick-6[truetype]
 >=media-gfx/qrencode-3"
 

@@ -20,7 +20,8 @@ virtual/pkgconfig
 >=dev-java/ant-core-1.7
 www-servers/tomcat:6"
 
-RDEPEND=">=www-client/firefox-3
+RDEPEND=">=sys-libs/zlib-1
+>=www-client/firefox-3
 >=virtual/jdk-1.5
 >=dev-java/commons-logging-1.1
 www-servers/tomcat:6"
