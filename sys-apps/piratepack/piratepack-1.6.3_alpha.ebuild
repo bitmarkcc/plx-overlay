@@ -66,7 +66,7 @@ src_install() {
 
 	./install_piratepack.sh /opt/piratepack "${D}" || die
 
-	maindir_fin=$(cat maindir_min) || die
+	maindir_fin=$(cat maindir_fin) || die
 	cd "{D}"/opt/piratepack/packages || die
 	while read -r line
 	do
