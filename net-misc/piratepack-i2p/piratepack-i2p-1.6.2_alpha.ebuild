@@ -27,23 +27,23 @@ RDEPEND=">=sys-libs/zlib-1
 www-servers/tomcat:6"
 
 src_compile() {
-	mkdir dest
-	mkdir dest/bin
-	mkdir dest/share
-	cp -r share/i2p-browser dest/share/
+	mkdir dest || die
+	mkdir dest/bin || die
+	mkdir dest/share || die
+	cp -r share/i2p-browser dest/share/ || die
 
-	cd gentoo
-	./configure.sh
-	cd ..
+	cd gentoo || die
+	./configure.sh || die
+	cd .. || die
 
-	cd setup/i2p-browser
-	./install_i2p-browser.sh "${S}"/dest /opt/piratepack/packages/i2p
+	cd setup/i2p-browser || die
+	./install_i2p-browser.sh "${S}"/dest /opt/piratepack/packages/i2p || die
 }
 
 src_install() {
 	dodir /opt/piratepack/packages/
 
-	mv dest "${D}"/opt/piratepack/packages/i2p
+	mv dest "${D}"/opt/piratepack/packages/i2p || die
 
 	dosym /opt/piratepack/packages/i2p/share/i2p-browser_build/eepget /opt/piratepack/packages/i2p/bin/eepget
 	dosym /opt/piratepack/packages/i2p/share/i2p-browser_build/i2prouter /opt/piratepack/packages/i2p/bin/i2prouter

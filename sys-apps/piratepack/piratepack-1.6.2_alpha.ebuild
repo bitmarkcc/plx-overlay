@@ -9,7 +9,7 @@ SRC_URI="https://piratelinux.org/repo/dist/${P}.tar.gz"
 LICENSE="CC0-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+networkmanager +piratepack_sensors +piratepack_amule +piratepack_keyboard +piratepack_torrent"
+IUSE="+networkmanager +piratepack_sensors +piratepack_amule +piratepack_keyboard +piratepack_bittorrent +piratepack_bitcoind"
 
 DEPEND=">=sys-devel/make-3
 virtual/pkgconfig
@@ -19,7 +19,7 @@ x11-libs/gtk+:2
 >=app-arch/unzip-5
 >=app-misc/cwallet-1
 >=net-misc/piratepack-i2p-1
->=net-im/pidgin-2[-gstreamer]
+>=net-im/pidgin-2
 >=x11-plugins/pidgin-otr-3
 "
 
@@ -31,26 +31,26 @@ RDEPEND=">=sys-libs/zlib-1
 >=net-misc/piratepack-i2p-1
 >=net-misc/vidalia-0.2
 >=net-proxy/polipo-1
->=net-p2p/bitcoind-0.8.1
->=net-im/pidgin-2[-gstreamer]
+piratepack_bitcoind? ( >=net-p2p/bitcoind-0.8.1 )
+>=net-im/pidgin-2
 >=x11-plugins/pidgin-otr-3
 networkmanager? ( >=net-misc/networkmanager-openvpn-0.9 )
 piratepack_sensors? ( >=sys-apps/lm_sensors-3 )
 piratepack_amule? ( >=net-p2p/amule-2[upnp] )
 piratepack_keyboard? ( >=x11-misc/matchbox-keyboard-0.1 )
-piratepack_torrent? ( >=net-p2p/transmission-2 )
+piratepack_bittorrent? ( >=net-p2p/transmission-2 )
 "
 
 src_configure() {
-	cd piratepack
+	cd piratepack || die
 	econf
-	cd ..
+	cd .. || die
 }
 
 src_compile() {
-	cd piratepack
+	cd piratepack || die
 	emake
-	cd ..
+	cd .. || die
 }
 
 src_install() {
@@ -63,9 +63,33 @@ src_install() {
 	dodir /usr/share/icons/hicolor/48x48/apps
 	dodir /usr/share/icons/hicolor/64x64/apps
 	dodir /usr/share/icons/hicolor/128x128/apps
-	./install_piratepack.sh /opt/piratepack "${D}"
+
+	./install_piratepack.sh /opt/piratepack "${D}" || die
+
+	maindir_fin=$(cat maindir_min) || die
+	cd "{D}"/opt/piratepack/packages || die
+	while read -r line
+	do
+		cd "$line"/bin
+		while read -r line2
+		do
+			dosym /opt/piratepack/packages/"$line"/bin/"$line2" "$maindir_fin"/bin/"$line2"
+		done < <(find * -maxdepth 0)
+		cd ../
+		cd share
+		while read -r line2
+		do
+			dosym /opt/piratepack/packages/"$line"/share/"$line2" "$maindir"/share/"$line2"
+		done < <(find * -maxdepth 0)
+		cd ../../
+	done < <(find * -maxdepth 0 -type d)
+
+	dosym "$maindir"/bin/piratepack /opt/piratepack/bin/piratepack
+	dosym "$maindir"/bin/piratepack-refresh /opt/piratepack/bin/piratepack-refresh
+	dosym "$maindir"/bin-pack /opt/piratepack/bin-pack
+
 	dosym /opt/piratepack/bin/piratepack /usr/bin/piratepack
 	dosym /opt/piratepack/bin/piratepack-refresh /usr/bin/piratepack-refresh
 	dodir /etc/profile.d
-	install -m 644 profile.sh "${D}"/etc/profile.d/piratepack.sh
+	install -m 644 profile.sh "${D}"/etc/profile.d/piratepack.sh || die
 }
