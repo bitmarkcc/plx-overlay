@@ -83,7 +83,7 @@ src_install() {
 		done < <(find * -maxdepth 0)
 		cd ../../ || die
 	done < <(find * -maxdepth 0 -type d)
-	cd ${S} || die
+	cd "${S}" || die
 
 	dosym "$maindir_fin"/bin/piratepack /opt/piratepack/bin/piratepack
 	dosym "$maindir_fin"/bin/piratepack-refresh /opt/piratepack/bin/piratepack-refresh
