@@ -67,6 +67,10 @@ src_install() {
 	./install_piratepack.sh /opt/piratepack "${D}" || die
 
 	maindir_fin=$(cat maindir_fin) || die
+	dosym "$maindir_fin"/share/firefox-mods_build/firefox-pm "$maindir_fin"/bin/firefox-pm
+	dosym "$maindir_fin"/share/tor-browser_build/tor-browser "$maindir_fin"/bin/tor-browser
+	dosym "$maindir_fin"/share/tor-browser_build/tor-instance "$maindir_fin"/bin/tor-instance
+	dosym "$maindir_fin"/share/tor-browser_build/tor-irc "$maindir_fin"/bin/tor-irc
 	cd /opt/piratepack/packages || die
 	while read -r line
 	do
@@ -91,6 +95,7 @@ src_install() {
 
 	dosym /opt/piratepack/bin/piratepack /usr/bin/piratepack
 	dosym /opt/piratepack/bin/piratepack-refresh /usr/bin/piratepack-refresh
+
 	dodir /etc/profile.d
 	install -m 644 profile.sh "${D}"/etc/profile.d/piratepack.sh || die
 }
