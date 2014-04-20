@@ -67,26 +67,26 @@ src_install() {
 	./install_piratepack.sh /opt/piratepack "${D}" || die
 
 	maindir_fin=$(cat maindir_fin) || die
-	cd "{D}"/opt/piratepack/packages || die
+	cd "${D}"/opt/piratepack/packages || die
 	while read -r line
 	do
-		cd "$line"/bin
+		cd "$line"/bin || die
 		while read -r line2
 		do
 			dosym /opt/piratepack/packages/"$line"/bin/"$line2" "$maindir_fin"/bin/"$line2"
 		done < <(find * -maxdepth 0)
-		cd ../
-		cd share
+		cd ../ || die
+		cd share || die
 		while read -r line2
 		do
-			dosym /opt/piratepack/packages/"$line"/share/"$line2" "$maindir"/share/"$line2"
+			dosym /opt/piratepack/packages/"$line"/share/"$line2" "$maindir_fin"/share/"$line2"
 		done < <(find * -maxdepth 0)
-		cd ../../
+		cd ../../ || die
 	done < <(find * -maxdepth 0 -type d)
 
-	dosym "$maindir"/bin/piratepack /opt/piratepack/bin/piratepack
-	dosym "$maindir"/bin/piratepack-refresh /opt/piratepack/bin/piratepack-refresh
-	dosym "$maindir"/bin-pack /opt/piratepack/bin-pack
+	dosym "$maindir_fin"/bin/piratepack /opt/piratepack/bin/piratepack
+	dosym "$maindir_fin"/bin/piratepack-refresh /opt/piratepack/bin/piratepack-refresh
+	dosym "$maindir_fin"/bin-pack /opt/piratepack/bin-pack
 
 	dosym /opt/piratepack/bin/piratepack /usr/bin/piratepack
 	dosym /opt/piratepack/bin/piratepack-refresh /usr/bin/piratepack-refresh
