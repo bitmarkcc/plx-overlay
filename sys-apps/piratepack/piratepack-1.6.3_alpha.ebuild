@@ -43,7 +43,7 @@ piratepack_bittorrent? ( >=net-p2p/transmission-2 )
 
 src_configure() {
 	cd piratepack || die
-	econf --disable-maintainer-mode
+	econf
 	cd .. || die
 }
 
