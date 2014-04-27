@@ -18,7 +18,7 @@ x11-libs/gtk+:2
 >=app-arch/zip-2
 >=app-arch/unzip-5
 >=app-misc/cwallet-1
->=net-misc/piratepack-i2p-1
+>=net-misc/piratepack-i2p-1.6.3_alpha
 >=net-im/pidgin-2
 >=x11-plugins/pidgin-otr-3
 "
@@ -28,7 +28,7 @@ RDEPEND=">=sys-libs/zlib-1
 >=media-video/ffmpeg-1
 >=media-gfx/imagemagick-6
 >=app-misc/cwallet-1
->=net-misc/piratepack-i2p-1
+>=net-misc/piratepack-i2p-1.6.3_alpha
 >=net-misc/vidalia-0.2
 >=net-proxy/polipo-1
 piratepack_bitcoind? ( >=net-p2p/bitcoind-0.8.1 )
@@ -43,7 +43,7 @@ piratepack_bittorrent? ( >=net-p2p/transmission-2 )
 
 src_configure() {
 	cd piratepack || die
-	econf
+	econf --disable-maintainer-mode
 	cd .. || die
 }
 
