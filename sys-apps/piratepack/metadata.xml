@@ -2,10 +2,10 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
         <use>
-                <flag name='piratepack_sensors'>Install <pkg>sys-apps/lm_sensors</pkg>.</flag>
-		<flag name='piratepack_amule'>Install <pkg>net-p2p/amule</pkg>.</flag>
-		<flag name='piratepack_keyboard'>Install a virtual keyboard.</flag>
-		<flag name='piratepack_bittorrent'>Install a bittorrent client.</flag>
-		<flag name='piratepack_bitcoind'>Install <pkg>net-p2p/bitcoind</pkg>.</flag>
+                <flag name='piratepack_sensors'>Install <pkg>sys-apps/lm_sensors</pkg></flag>
+		<flag name='piratepack_amule'>Install <pkg>net-p2p/amule</pkg></flag>
+		<flag name='piratepack_keyboard'>Install a virtual keyboard</flag>
+		<flag name='piratepack_bittorrent'>Install a bittorrent client</flag>
+		<flag name='piratepack_bitcoind'>Install <pkg>net-p2p/bitcoind</pkg></flag>
         </use>
 </pkgmetadata>
