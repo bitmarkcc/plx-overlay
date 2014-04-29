@@ -3,7 +3,7 @@
 # $Header: $
 
 EAPI=5
-DESCRIPTION="Enhance your digital freedom"
+DESCRIPTION="Tools for enhancing privacy, free speech, and transparency"
 HOMEPAGE="https://piratelinux.org"
 SRC_URI="https://piratelinux.org/repo/dist/${P}.tar.gz"
 LICENSE="CC0-1.0"
