@@ -16,7 +16,7 @@ virtual/pkgconfig
 >=sys-libs/zlib-1
 gtk? ( x11-libs/gtk+:2 )
 sys-libs/db:4.8
->=dev-libs/openssl-0.9"
+>=dev-libs/openssl-0.9[-bindist]"
 
 RDEPEND=">=sys-libs/zlib-1
 gtk? ( x11-libs/gtk+:2 )
