@@ -92,6 +92,7 @@ src_install() {
 	dosym "$maindir_fin"/bin/piratepack /opt/piratepack/bin/piratepack
 	dosym "$maindir_fin"/bin/piratepack-refresh /opt/piratepack/bin/piratepack-refresh
 	dosym "$maindir_fin"/bin-pack /opt/piratepack/bin-pack
+	dosym "$maindir_fin"/share /opt/piratepack/share
 
 	dosym /opt/piratepack/bin/piratepack /usr/bin/piratepack
 	dosym /opt/piratepack/bin/piratepack-refresh /usr/bin/piratepack-refresh
