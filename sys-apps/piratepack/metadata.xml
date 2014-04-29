@@ -7,5 +7,6 @@
 		<flag name='piratepack_keyboard'>Install a virtual keyboard</flag>
 		<flag name='piratepack_bittorrent'>Install a bittorrent client</flag>
 		<flag name='piratepack_bitcoind'>Install <pkg>net-p2p/bitcoind</pkg></flag>
+		<flag name='piratepack_cwallet'>Install <pkg>app-misc/cwallet</pkg></flag>
         </use>
 </pkgmetadata>

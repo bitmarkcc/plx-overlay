@@ -16,12 +16,12 @@ virtual/pkgconfig
 >=sys-libs/zlib-1
 gtk? ( x11-libs/gtk+:2 )
 sys-libs/db:4.8
->=dev-libs/openssl-0.9[-bindist]"
+>=dev-libs/openssl-1.0.0h[-bindist]"
 
 RDEPEND=">=sys-libs/zlib-1
 gtk? ( x11-libs/gtk+:2 )
 sys-libs/db:4.8
->=dev-libs/openssl-0.9
+>=dev-libs/openssl-1.0.0h[-bindist]
 >=media-gfx/imagemagick-6[truetype]
 >=media-gfx/qrencode-3"
 

@@ -9,7 +9,7 @@ SRC_URI="https://piratelinux.org/repo/dist/${P}.tar.gz"
 LICENSE="CC0-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+networkmanager +piratepack_sensors +piratepack_amule +piratepack_keyboard +piratepack_bittorrent +piratepack_bitcoind"
+IUSE="+networkmanager +piratepack_sensors +piratepack_amule +piratepack_keyboard +piratepack_bittorrent +piratepack_bitcoind +piratepack_cwallet"
 
 DEPEND=">=sys-devel/make-3
 virtual/pkgconfig
@@ -27,7 +27,6 @@ RDEPEND=">=sys-libs/zlib-1
 >=www-client/firefox-3
 >=media-video/ffmpeg-1
 >=media-gfx/imagemagick-6
->=app-misc/cwallet-1
 >=net-misc/piratepack-i2p-1.6.3_alpha
 >=net-misc/vidalia-0.2
 >=net-proxy/polipo-1
@@ -39,6 +38,7 @@ piratepack_sensors? ( >=sys-apps/lm_sensors-3 )
 piratepack_amule? ( >=net-p2p/amule-2[upnp] )
 piratepack_keyboard? ( >=x11-misc/matchbox-keyboard-0.1 )
 piratepack_bittorrent? ( >=net-p2p/transmission-2 )
+piratepack_cwallet? ( >=app-misc/cwallet-1 )
 "
 
 src_configure() {
