@@ -9,7 +9,7 @@ SRC_URI="https://piratelinux.org/repo/dist/${P}.tar.gz"
 LICENSE="CC0-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+networkmanager"
+IUSE="+networkmanager +gtk"
 
 DEPEND=">=sys-devel/make-3
 virtual/pkgconfig
@@ -26,11 +26,9 @@ x11-libs/gtk+:2
 RDEPEND=">=sys-libs/zlib-1
 >=www-client/firefox-3
 >=media-video/ffmpeg-1
->=media-gfx/imagemagick-6
 >=net-misc/piratepack-i2p-1.6.3_alpha
 >=net-misc/vidalia-0.2
 >=net-proxy/polipo-1
->=net-p2p/bitcoind-0.8.1
 >=net-im/pidgin-2
 >=x11-plugins/pidgin-otr-3
 networkmanager? ( >=net-misc/networkmanager-openvpn-0.9 )
