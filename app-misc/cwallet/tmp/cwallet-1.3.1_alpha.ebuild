@@ -31,7 +31,6 @@ src_configure() {
 
 src_compile() {
 	emake
-	echo "blah"
 }
 
 src_install() {
