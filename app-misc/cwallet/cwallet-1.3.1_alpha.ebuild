@@ -26,20 +26,11 @@ sys-libs/db:4.8
 >=app-text/texlive-2012"
 
 src_configure() {
-	if use gtk
-	then
-		econf
-	fi
+	econf
 }
 
 src_compile() {
-	cd src
-	emake -f makefile.static
-	cd ..
-	if use gtk
-	then
-		emake
-	fi
+	emake
 }
 
 src_install() {
