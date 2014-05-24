@@ -31,7 +31,6 @@ RDEPEND=">=sys-libs/zlib-1
 >=net-im/pidgin-2
 >=x11-plugins/pidgin-otr-3
 networkmanager? ( >=net-misc/networkmanager-openvpn-0.9 )
-piratepack_sensors? ( >=sys-apps/lm_sensors-3 )
 piratepack_amule? ( >=net-p2p/amule-2 )
 piratepack_keyboard? ( >=x11-misc/matchbox-keyboard-0.1 )
 piratepack_bittorrent? ( >=net-p2p/transmission-2 )
