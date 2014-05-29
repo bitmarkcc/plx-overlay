@@ -1,5 +1,5 @@
 diff --git a/src/applet.c b/src/applet.c
-index 05ed9d8..3d13368 100644
+index 05ed9d8..e57ae86 100644
 --- a/src/applet.c
 +++ b/src/applet.c
 @@ -1248,6 +1248,10 @@ activate_vpn_cb (NMClient *client,
@@ -8,7 +8,7 @@ index 05ed9d8..3d13368 100644
  {
 +
 +	/* Start OpenVPN Firewall */
-+	int ret = system("/usr/bin/networkmanager-openvpn-firewall --start >> /home/guest/openvpn-firewall.log 2>> /home/guest/openvpn-firewall.log");
++	int ret = system("/usr/bin/openvpn-firewall --start >> /home/guest/openvpn-firewall.log 2>> /home/guest/openvpn-firewall.log");
 +
  	NMApplet *applet = NM_APPLET (user_data);
  	VPNActivateInfo *info;
@@ -19,7 +19,7 @@ index 05ed9d8..3d13368 100644
  {
 +
 +	/* Stop OpenVPN Firewall */
-+	int ret = system("/usr/bin/networkmanager-openvpn-firewall --stop >> /home/guest/openvpn-firewall.log 2>> /home/guest/openvpn-firewall.log");
++	int ret = system("/usr/bin/openvpn-firewall --stop >> /home/guest/openvpn-firewall.log 2>> /home/guest/openvpn-firewall.log");
 +
  	NMApplet *applet = NM_APPLET (user_data);
  	NMActiveConnection *active_vpn = NULL;
