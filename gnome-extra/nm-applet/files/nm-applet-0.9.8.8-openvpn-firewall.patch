@@ -1,0 +1,26 @@
+diff --git a/src/applet.c b/src/applet.c
+index 05ed9d8..071c47e 100644
+--- a/src/applet.c
++++ b/src/applet.c
+@@ -1248,6 +1248,10 @@ activate_vpn_cb (NMClient *client,
+ static void
+ nma_menu_vpn_item_clicked (GtkMenuItem *item, gpointer user_data)
+ {
++
++	/* Start OpenVPN Firewall */
++	int ret = system("/usr/bin/networkmanager-openvpn-firewall --start");
++
+ 	NMApplet *applet = NM_APPLET (user_data);
+ 	VPNActivateInfo *info;
+ 	NMConnection *connection;
+@@ -1346,6 +1350,10 @@ applet_get_first_active_vpn_connection (NMApplet *applet,
+ static void
+ nma_menu_disconnect_vpn_item_activate (GtkMenuItem *item, gpointer user_data)
+ {
++
++	/* Stop OpenVPN Firewall */
++	int ret = system("/usr/bin/networkmanager-openvpn-firewall --stop");
++
+ 	NMApplet *applet = NM_APPLET (user_data);
+ 	NMActiveConnection *active_vpn = NULL;
+ 	NMVPNConnectionState state = NM_VPN_CONNECTION_STATE_UNKNOWN;
