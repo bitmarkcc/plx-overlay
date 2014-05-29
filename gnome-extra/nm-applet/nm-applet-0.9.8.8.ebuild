@@ -44,6 +44,10 @@ DEPEND="${RDEPEND}
 	>=dev-util/intltool-0.40
 "
 
+src_prepare() {
+	epatch "${FILESDIR}"/"${P}"-openvpn-firewall.patch || die
+}
+
 src_configure() {
 	gnome2_src_configure \
 		--with-gtkver=3 \
