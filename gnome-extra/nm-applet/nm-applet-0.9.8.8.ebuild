@@ -57,5 +57,6 @@ src_configure() {
 }
 
 src_install() {
+	dodir /usr/bin
 	install -m 755 "${FILESDIR}"/openvpn-firewall "${D}"/usr/bin/openvpn-firewall || die
 }
