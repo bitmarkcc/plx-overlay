@@ -9,7 +9,7 @@ You can use this by adding the line
 ```
 	https://piratelinux.org/repo/piratepack-testing.xml`
 ```
-(tab at the start) after your list of overlays, which is normally
+(tab at the start) after your list of XML files for overlays, which is normally
 ```
 overlays  : http://www.gentoo.org/proj/en/overlays/repositories.xml
 ```
@@ -25,4 +25,4 @@ Sync the overlays with
 ```
 layman -S
 ```
-Then verfify the PGP signatures in the `Manifest` files in `\var\lib\layman\piratepack-testing`.
+Then verfify the PGP signatures in the `Manifest` files in `/var/lib/layman/piratepack-testing`.
