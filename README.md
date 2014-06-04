@@ -1,13 +1,13 @@
 piratepack-overlay-testing
 ==========================
 
-The testing vesion of the piratepack Gentoo overlay
+The testing version of the piratepack Gentoo overlay
 
 The public key used for signing is available here: https://piratelinux.org/public.key.
 
 You can use this by adding the line
 ```
-	https://piratelinux.org/repo/piratepack-testing.xml`
+	https://piratelinux.org/repo/piratepack-testing.xml
 ```
 (tab at the start) after your list of XML files for overlays, which is normally
 ```
