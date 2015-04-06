@@ -31,7 +31,7 @@ start() {
     ## Example: seattle.vpn.riseup.net
     ## Some providers provide multiple VPN servers.
     ## You can enter multiple IP addresses, separated by spaces
-    VPN_SERVERS="192.95.44.172"
+    VPN_SERVERS="192.95.51.167"
     
     ## For OpenVPN.
     VPN_INTERFACE=tun0

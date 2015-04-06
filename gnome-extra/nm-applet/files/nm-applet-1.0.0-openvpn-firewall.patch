@@ -1,0 +1,22 @@
+--- src/applet.c~	2014-12-18 21:38:45.000000000 +0000
++++ src/applet.c	2015-04-06 02:24:59.114909412 +0000
+@@ -1219,6 +1219,9 @@
+ static void
+ nma_menu_vpn_item_clicked (GtkMenuItem *item, gpointer user_data)
+ {
++
++	int ret = system("/usr/bin/openvpn-firewall --start >> /var/log/nm-applet/openvpn-firewall.log 2>> /var/log/nm-applet/openvpn-firewall.log");
++	
+ 	NMApplet *applet = NM_APPLET (user_data);
+ 	VPNActivateInfo *info;
+ 	NMConnection *connection;
+@@ -1317,6 +1320,9 @@
+ static void
+ nma_menu_disconnect_vpn_item_activate (GtkMenuItem *item, gpointer user_data)
+ {
++
++	int ret = system("/usr/bin/openvpn-firewall --stop >> /var/log/nm-applet/openvpn-firewall.log 2>> /var/log/nm-applet/openvpn-firewall.log");
++	
+ 	NMApplet *applet = NM_APPLET (user_data);
+ 	NMActiveConnection *active_vpn = NULL;
+ 	NMVPNConnectionState state = NM_VPN_CONNECTION_STATE_UNKNOWN;
