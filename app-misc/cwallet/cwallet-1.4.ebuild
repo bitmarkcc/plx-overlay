@@ -25,6 +25,7 @@ sys-libs/db:4.8
 >=app-text/texlive-2012"
 
 src_prepare() {
+	default
 	eautoreconf
 }
 
