@@ -24,6 +24,8 @@ sys-libs/db:4.8
 >=media-gfx/qrencode-3
 >=app-text/texlive-2012"
 
+inherit autotools
+
 src_prepare() {
 	default
 	eautoreconf
