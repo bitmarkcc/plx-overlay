@@ -42,9 +42,10 @@ src_compile() {
 src_install() {
 	dodir /usr/bin
 	dodir /usr/share/images
+	dodir /usr/share/pixmaps
 	install -m 755 src/cwallet "${D}"/usr/bin/cwallet || die
 	install -m 644 cwallet-logo.png "${D}"/usr/share/images/cwallet-logo.png || die
-	install -m 644 cwallet-gui.png "${D}"/usr/share/images/cwallet-gui.png || die
+	install -m 644 cwallet-gui.png "${D}"/usr/share/pixmaps/cwallet-gui.png || die
 	if use gtk
 	then
 		install -m 755 src/cwallet-gui "${D}"/usr/bin/cwallet-gui || die
