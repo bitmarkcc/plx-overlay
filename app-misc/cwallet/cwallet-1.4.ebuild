@@ -11,8 +11,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 IUSE="gtk"
 
-DEPEND=">=sys-devel/make-3
-virtual/pkgconfig
+DEPEND="virtual/pkgconfig
 >=sys-libs/zlib-1
 gtk? ( x11-libs/gtk+:2 )
 sys-libs/db:4.8
