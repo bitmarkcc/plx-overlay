@@ -40,8 +40,8 @@ src_compile() {
 }
 
 src_install() {
-	dodir /opt/cwallet/bin
-	dodir /opt/cwallet/share/cwallet_build
+	dodir /usr/bin
+	dodir /usr/share/images
 	install -m 755 src/cwallet "${D}"/usr/bin/cwallet || die
 	install -m 644 cwallet-logo.png "${D}"/usr/share/images/cwallet-logo.png || die
 	install -m 644 cwallet-gui.png "${D}"/usr/share/images/cwallet-gui.png || die
