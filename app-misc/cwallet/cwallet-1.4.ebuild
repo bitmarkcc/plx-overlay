@@ -24,6 +24,10 @@ sys-libs/db:4.8
 >=media-gfx/qrencode-3
 >=app-text/texlive-2012"
 
+src_prepare() {
+	eautoreconf
+}
+
 src_configure() {
 	econf
 }
