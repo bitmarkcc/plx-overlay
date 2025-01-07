@@ -29,6 +29,10 @@ RDEPEND="
 
 S=${WORKDIR}/${P/_p*/}
 
+PATCHES=(
+	"${FILESDIR}"/clarify-errors.patch
+}
+
 src_compile() {
 	emake CC="$(tc-getCC)" INC_PATH= LIB_PATH=
 }
