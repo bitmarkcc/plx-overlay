@@ -4,13 +4,19 @@
 EAPI=7
 inherit toolchain-funcs
 
+DEBIAN_P=${PV#*_p}
+DEBIAN_P=${DEBIAN_P/_p/.}
+
 DESCRIPTION="User preference utility for XKB extensions for X"
-HOMEPAGE="https://github.com/stephenmontgomerysmith/xkbset"
-SRC_URI="https://plx.im/gentoo/${P}.tar.gz"
+HOMEPAGE="https://faculty.missouri.edu/~stephen/software/#xkbset"
+SRC_URI="
+	https://faculty.missouri.edu/~stephen/software/${PN}/${P/_p*/}.tar.gz
+	mirror://debian/pool/main/x/${PN}/${PN}_${PV/_p*/}-${DEBIAN_P}.debian.tar.xz
+"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm64"
+KEYWORDS="~amd64 ~x86"
 IUSE="tk"
 
 CDEPEND="
@@ -27,7 +33,8 @@ RDEPEND="
 S=${WORKDIR}/${P/_p*/}
 
 PATCHES=(
-	"${FILESDIR}"/clarify-errors.patch
+	"${FILESDIR}"/${P/_p*/}-ldflags.patch
+	"${WORKDIR}"/debian/patches/02-clarify-errors.patch
 )
 
 src_compile() {
