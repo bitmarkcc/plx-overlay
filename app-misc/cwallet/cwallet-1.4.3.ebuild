@@ -21,7 +21,7 @@ RDEPEND=">=sys-libs/zlib-1
 gtk? ( x11-libs/gtk+:2 )
 sys-libs/db:4.8
 >=dev-libs/openssl-1.0.0h
->=media-gfx/qrencode-3
+>=media-gfx/qrencode-3[png]
 >=app-text/texlive-2012"
 
 inherit autotools
